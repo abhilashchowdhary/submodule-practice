@@ -12,7 +12,10 @@ do
 		mv "$submodule_path" "$new_submodule_dir"
 		git submodule deinit -f -- $submodule_path
 		rm -rf $new_submodule_dir"/.git"
-		echo ".git/modules/"$submodule_path
+		rm -f $new_submodule_dir"/.gitignore"
+		git rm -rf "$submodule_path"
+		git status
+		#echo ".git/modules/"$submodule_path
 		git add .
 		git commit -m "moved submodule "$submodule_path" to directory"$new_submodule_dir
 		git push origin "$branch"
