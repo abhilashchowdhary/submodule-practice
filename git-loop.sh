@@ -39,7 +39,6 @@ fi
 
 echo "Submodule "$submodule_path" was removed successfully. Pushing the changes to the repo"
 
-#echo ".git/modules/"$submodule_path
 git add .
 git commit -m "moved submodule "$submodule_path" to directory"$new_submodule_dir
 git push origin "$branch"
